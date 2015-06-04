@@ -12,6 +12,8 @@ CommitMessage.parseFromFile(file, path.dirname(file), function(err, message) {
         console.log(message.formattedMessages);
     }
     if (message.hasErrors()) {
+        console.error('Commit failed due to invalid commit message, see',
+        'https://github.com/sitestacker/sitestacker-wiki/wiki/Git-Commit-Guidelines');
         // https://nodejs.org/api/process.html#process_exit_codes
         process.exit(1); // Uncaught Fatal Exception
     }
